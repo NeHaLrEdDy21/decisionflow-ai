@@ -25,7 +25,7 @@ for _d in (DB_DIR, CHROMA_DIR, LOG_DIR):
 # --- LLM ---
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini").lower()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "").strip()
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
 FORCE_MOCK = os.getenv("FORCE_MOCK", "false").lower() == "true"
 
 # True when we cannot (or are told not to) call a real model.

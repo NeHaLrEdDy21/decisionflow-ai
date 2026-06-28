@@ -24,7 +24,9 @@ def _make_node(agent_key: str):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         if agent_key in state.get("plan", DEFAULT_PIPELINE):
             return agent.execute(state)
-        return {}
+        # Skipped (not in plan): return a no-op update. LangGraph 0.2.x raises
+        # InvalidUpdateError if a node returns an empty dict, so echo `trace`.
+        return {"trace": state.get("trace", [])}
 
     return node
 
