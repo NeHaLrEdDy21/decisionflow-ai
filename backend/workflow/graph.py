@@ -37,16 +37,27 @@ def build_graph():
         log.warning("langgraph unavailable (%s); will run sequentially", exc)
         return None
 
-    g = StateGraph(FlowState)
-    g.add_node("planner", REGISTRY["planner"].execute)
-    for key in DEFAULT_PIPELINE:
-        g.add_node(key, _make_node(key))
+    try:
+        return _compile(StateGraph, START, END)
+    except Exception as exc:
+        log.warning("graph build failed (%s); will run sequentially", exc)
+        return None
 
-    g.add_edge(START, "planner")
-    prev = "planner"
+
+def _compile(StateGraph, START, END):
+    g = StateGraph(FlowState)
+    # Node names must NOT collide with state keys (LangGraph 0.2.x enforces this),
+    # so every node is prefixed. The node still writes the real state keys.
+    node = lambda k: f"agent_{k}"
+    g.add_node(node("planner"), REGISTRY["planner"].execute)
     for key in DEFAULT_PIPELINE:
-        g.add_edge(prev, key)
-        prev = key
+        g.add_node(node(key), _make_node(key))
+
+    g.add_edge(START, node("planner"))
+    prev = node("planner")
+    for key in DEFAULT_PIPELINE:
+        g.add_edge(prev, node(key))
+        prev = node(key)
     g.add_edge(prev, END)
     return g.compile()
 
