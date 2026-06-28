@@ -1,0 +1,21 @@
+[Customer Success QBR - ABC Technologies]
+
+CSM (Priya): Thanks for joining ahead of your renewal. How has the platform been working for your team?
+
+Customer (Mark, IT Director): Overall we like the platform a lot. Adoption across the support team has been strong and the reporting saves us hours every week.
+
+CSM: Great to hear. Anything holding you back?
+
+Customer: Two things. First, pricing. Finance is reviewing all software spend this quarter, so we're evaluating pricing before we commit to renewal. We need to understand the value story clearly.
+
+CSM: Understood. We can put together an ROI summary.
+
+Customer: Second, we need SSO. Our security team now requires single sign-on for every vendor. Without SSO we may struggle to get final approval internally.
+
+CSM: We support SSO on our Enterprise tier. I'll get you implementation details.
+
+Customer: Good. Renewal is coming up next month, so we'd like to move quickly.
+
+CSM: Noted - renewal is high priority. Who signs off on the final decision?
+
+Customer: Probably our VP of Engineering, but I'll confirm. Let's keep momentum.

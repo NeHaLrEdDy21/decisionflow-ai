@@ -1,0 +1,12 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+python-dotenv==1.0.1
+python-multipart==0.0.12
+langchain==0.3.7
+langchain-core==0.3.15
+langgraph==0.2.45
+langchain-google-genai==2.0.4
+# chromadb is optional; the Knowledge agent falls back to keyword search if absent.
+# On Windows, install it separately if needed:  pip install chromadb
+# chromadb==0.5.15

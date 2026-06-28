@@ -1,0 +1,5 @@
+Ticket #4821 | Priority: High | Status: Open
+Subject: SSO (SAML) implementation support
+Customer: ABC Technologies
+Description: Customer requests help configuring SAML-based single sign-on for
+their Okta identity provider. Security team requires SSO before renewal sign-off.

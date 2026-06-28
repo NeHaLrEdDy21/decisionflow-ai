@@ -1,0 +1,9 @@
+{
+  "name": "ABC Technologies",
+  "health": 78,
+  "renewal_days": 20,
+  "arr": 42000,
+  "owner": "Priya (CSM)",
+  "open_opportunities": ["Enterprise tier upgrade"],
+  "previous_meetings": ["Onboarding (Q1)", "Mid-year check-in (Q2)"]
+}

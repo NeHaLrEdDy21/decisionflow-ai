@@ -1,0 +1,22 @@
+# Render deployment for the DecisionFlow AI backend (FastAPI).
+# Create a Render account, New + > Blueprint, point it at this repo.
+services:
+  - type: web
+    name: decisionflow-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: FORCE_MOCK
+        value: "false"
+      - key: GOOGLE_API_KEY
+        sync: false   # set this secret in the Render dashboard
